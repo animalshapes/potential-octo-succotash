@@ -44,7 +44,7 @@
 	var dragHoldY;
 	
 	function init() {
-		numShapes = 10;
+		numShapes = 2;
 		shapes = [];
 		
 		makeShapes();
@@ -64,7 +64,7 @@
 		var tempB;
 		var tempColor;
 		for (i=0; i < numShapes; i++) {
-			tempRad = 10 + Math.floor(Math.random()*25);
+			tempRad = 10;
 			tempX = Math.random()*(theCanvas.width - tempRad);
 			tempY = Math.random()*(theCanvas.height - tempRad);
 			tempR = Math.floor(Math.random()*255);
