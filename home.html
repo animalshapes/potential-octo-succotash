@@ -31,6 +31,9 @@
 	function canvasApp() {
 	var theCanvas = document.getElementById("canvasOne");
 	var context = theCanvas.getContext("2d");
+
+	var topMap = new Image();
+	topMap.src = "court_small.png";
 	
 	init();
 	
@@ -172,17 +175,19 @@
 			context.closePath();
 			context.fill();
 		}
+		drawBackground();
 	}
 
 	function drawScreen() {
-		var topMap = new Image();
-		topMap.src = "court_small.png";
-		context.drawImage(topMap, 0,0);
+		drawBackground();
 		//bg
 		//context.fillStyle = "#000000";
 		//context.fillRect(0,0,theCanvas.width,theCanvas.height);
 		
 		drawShapes();		
+	}
+	function drawBackground() {
+		context.drawImage(topMap, 0,0);
 	}
 }
 
