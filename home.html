@@ -175,9 +175,12 @@
 	}
 
 	function drawScreen() {
+		var topMap = new Image();
+		topMap.src = "court_small.png";
+		context.drawImage(topMap, 0,0);
 		//bg
-		context.fillStyle = "#000000";
-		context.fillRect(0,0,theCanvas.width,theCanvas.height);
+		//context.fillStyle = "#000000";
+		//context.fillRect(0,0,theCanvas.width,theCanvas.height);
 		
 		drawShapes();		
 	}
