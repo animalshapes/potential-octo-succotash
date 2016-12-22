@@ -47,7 +47,7 @@
 	var dragHoldY;
 	
 	function init() {
-		numShapes = 2;
+		numShapes = 4;
 		shapes = [];
 		
 		makeShapes();
@@ -78,6 +78,26 @@
 		tempColor = "rgb(" + tempR + "," + tempG + "," + tempB +")";
 		tempShape = {x:tempX, y:tempY, rad:tempRad, color:tempColor};
 		shapes.push(tempShape);
+
+		tempRad = 7;
+		tempX = Math.random()*(theCanvas.width - tempRad);
+		tempY = Math.random()*(theCanvas.height - tempRad);
+		var tempR = 0;
+		var tempG = 255;
+		var tempB = 0;
+		tempColor = "rgb(" + tempR + "," + tempG + "," + tempB +")";
+		tempShape = {x:tempX, y:tempY, rad:tempRad, color:tempColor};
+		shapes.push(tempShape);
+
+		tempX = Math.random()*(theCanvas.width - tempRad);
+		tempY = Math.random()*(theCanvas.height - tempRad);
+		tempR = 255;
+		tempG = 0;
+		tempB = 0;
+		tempColor = "rgb(" + tempR + "," + tempG + "," + tempB +")";
+		tempShape = {x:tempX, y:tempY, rad:tempRad, color:tempColor};
+		shapes.push(tempShape);
+
 	}
 	
 	function mouseDownListener(evt) {
