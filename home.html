@@ -56,24 +56,25 @@
 	
 	function makeShapes() {
 		var i;
-		var tempX;
-		var tempY;
-		var tempRad;
-		var tempR;
-		var tempG;
-		var tempB;
+		var tempRad = 10;
+		var tempX = Math.random()*(theCanvas.width - tempRad);
+		var tempY = Math.random()*(theCanvas.height - tempRad);
+		var tempR = 0;
+		var tempG = 255;
+		var tempB = 0;
 		var tempColor;
-		for (i=0; i < numShapes; i++) {
-			tempRad = 10;
-			tempX = Math.random()*(theCanvas.width - tempRad);
-			tempY = Math.random()*(theCanvas.height - tempRad);
-			tempR = Math.floor(Math.random()*255);
-			tempG = Math.floor(Math.random()*255);
-			tempB = Math.floor(Math.random()*255);
-			tempColor = "rgb(" + tempR + "," + tempG + "," + tempB +")";
-			tempShape = {x:tempX, y:tempY, rad:tempRad, color:tempColor};
-			shapes.push(tempShape);
-		}
+		tempColor = "rgb(" + tempR + "," + tempG + "," + tempB +")";
+		tempShape = {x:tempX, y:tempY, rad:tempRad, color:tempColor};
+		shapes.push(tempShape);
+
+		tempX = Math.random()*(theCanvas.width - tempRad);
+		tempY = Math.random()*(theCanvas.height - tempRad);
+		tempR = 255;
+		tempG = 0;
+		tempB = 0;
+		tempColor = "rgb(" + tempR + "," + tempG + "," + tempB +")";
+		tempShape = {x:tempX, y:tempY, rad:tempRad, color:tempColor};
+		shapes.push(tempShape);
 	}
 	
 	function mouseDownListener(evt) {
