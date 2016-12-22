@@ -1,55 +1,34 @@
 <!doctype html>
+
 <html lang="en">
 
-<head>
-<meta charset="UTF-8">
+	<head>
+	<meta charset="UTF-8">
 
-<style type="text/css">
-	h4 {font-family: sans-serif;}
-	p {font-family: sans-serif;}
-	a {font-family: sans-serif; color:#d15423; text-decoration:none;}
-</style>
- 
+	<style type="text/css">
+		h4 {font-family: sans-serif;}
+		p {font-family: sans-serif;}
+		a {font-family: sans-serif; color:#d15423; text-decoration:none;}
+	</style>
 
-<title>HTML5 Canvas Example - Simple Dragging Objects</title>
+	<script type="text/javascript">
 
-<script src="../Modernizr/modernizr-2.0.6.js"></script>
-
-<script type="text/javascript">
-
-//JavaScript HTML5 Canvas example by Dan Gries, rectangleworld.com.
-//The basic setup here, including the debugging code and window load listener, is copied from 'HTML5 Canvas' by Fulton & Fulton.
-//Checking for browser compatibility is accomplished with the Modernizr JavaScript library.
-//The latest version of the library is available at www.modernizr.com.
-
-//The code below establishes a way to send debug messages to the browser JavaScript Console, 
-//but in such a way as to ignore errors when the browser doesn't support the JavaScript Console.
-//To log a messages to the console within this code, insert into the code:
-//Debugger.log("my message");
-window.addEventListener("load", windowLoadHandler, false);
-var Debugger = function() { };
-Debugger.log = function(message) {
-	try {
-		console.log(message);
+	window.addEventListener("load", windowLoadHandler, false);
+	var Debugger = function() { };
+	Debugger.log = function(message) {
+		try {
+			console.log(message);
+		}
+		catch (exception) {
+			return;
+		}
 	}
-	catch (exception) {
-		return;
+
+	function windowLoadHandler() {
+		canvasApp();
 	}
-}
 
-function windowLoadHandler() {
-	canvasApp();
-}
-
-function canvasSupport() {
-	return Modernizr.canvas;
-}
-
-function canvasApp() {
-	if (!canvasSupport()) {
-		return;
-	}
-	
+	function canvasApp() {
 	var theCanvas = document.getElementById("canvasOne");
 	var context = theCanvas.getContext("2d");
 	
@@ -193,7 +172,7 @@ function canvasApp() {
 			context.fill();
 		}
 	}
-	
+
 	function drawScreen() {
 		//bg
 		context.fillStyle = "#000000";
@@ -201,20 +180,19 @@ function canvasApp() {
 		
 		drawShapes();		
 	}
-	
 }
 
-</script>
 
-</head>
-<body>
-<div style="top: 50px; text-align:center">
-<h4>A Simple HTML5 Canvas Example - Dragging Objects</h4>
-<canvas id="canvasOne" width="500" height="300">
-Your browser does not support HTML5 canvas.
-</canvas>
-<p>Drag the circles with the mouse.</p>
-<p><a href="http://www.rectangleworld.com">rectangleworld.com</a></p>
-</div>
-</body>
+	</script>
+
+	</head>
+
+	<body>
+		<div style="top: 50px; text-align:center">
+			<h4>A Simple HTML5 Canvas Example - Dragging Objects</h4>
+			<canvas id="canvasOne" width="530" height="433"></canvas>
+			<p>Drag the circles with the mouse.</p>
+		</div>
+	</body>
+
 </html>
