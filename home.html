@@ -1,10 +1,32 @@
-<html>
+<!doctype html>
+
+<html lang="en">
+
 	<head>
-		<title>
-			Hello World!
-		</title>
+	<meta charset="UTF-8">
+
+	<style type="text/css">
+		h4 {font-family: sans-serif;}
+		p {font-family: sans-serif;}
+		a {font-family: sans-serif; color:#d15423; text-decoration:none;}
+	</style>
+
+	<script type="text/javascript">
+		var canvas = document.createElement("canvas");
+		var pic = document.getElementById("court");
+		canvas.width = pic.width;
+		canvas.height = pic.height;
+		canvas.getContext("2d").drawImage(pic, 0, 0);
+	</script>
+
 	</head>
+
 	<body>
-		<img src="court_small.png">
+		<div style="top: 50px; text-align:center">
+			<h4>A Simple HTML5 Canvas Example - Dragging Objects</h4>
+			<img id="court" src="court_small.png">
+			<p>Drag the circles with the mouse.</p>
+		</div>
 	</body>
+
 </html>
