@@ -175,19 +175,14 @@
 			context.closePath();
 			context.fill();
 		}
-		drawBackground();
 	}
 
 	function drawScreen() {
-		drawBackground();
 		//bg
-		//context.fillStyle = "#000000";
-		//context.fillRect(0,0,theCanvas.width,theCanvas.height);
+		context.fillStyle = "#000000";
+		context.fillRect(0,0,theCanvas.width,theCanvas.height);
 		
 		drawShapes();		
-	}
-	function drawBackground() {
-		context.drawImage(topMap, 0,0);
 	}
 }
 
