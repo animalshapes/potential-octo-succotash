@@ -167,6 +167,7 @@
 	}
 	
 	function drawShapes() {
+		context.clearRect(0,0,theCanvas.width,theCanvas.height);
 		var i;
 		for (i=0; i < numShapes; i++) {
 			context.fillStyle = shapes[i].color;
