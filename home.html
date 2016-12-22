@@ -12,11 +12,11 @@
 	</style>
 
 	<script type="text/javascript">
-		var canvas = document.createElement("canvas");
-		var pic = document.getElementById("court");
-		canvas.width = pic.width;
-		canvas.height = pic.height;
-		canvas.getContext("2d").drawImage(pic, 0, 0);
+//		var canvas = document.createElement("canvas");
+//		var pic = document.getElementById("court");
+//		canvas.width = pic.width;
+//		canvas.height = pic.height;
+//		canvas.getContext("2d").drawImage(pic, 0, 0);
 	</script>
 
 	</head>
@@ -24,7 +24,7 @@
 	<body>
 		<div style="top: 50px; text-align:center">
 			<h4>A Simple HTML5 Canvas Example - Dragging Objects</h4>
-			<img id="court" src="court_small.png">
+			<canvas style="background-image: url=('court_small.png');" id="canvasOne" width="530" height="433"></canvas>
 			<p>Drag the circles with the mouse.</p>
 		</div>
 	</body>
