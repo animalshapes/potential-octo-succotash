@@ -13,6 +13,21 @@
 
 	<script type="text/javascript">
 
+	window.addEventListener("load", windowLoadHandler, false);
+	var Debugger = function() { };
+	Debugger.log = function(message) {
+		try {
+			console.log(message);
+		}
+		catch (exception) {
+			return;
+		}
+	}
+
+	function windowLoadHandler() {
+		canvasApp();
+	}
+
 	var theCanvas = document.getElementById("canvasOne");
 	var context = theCanvas.getContext("2d");
 	
