@@ -261,7 +261,7 @@
     function calcPercentage(variablearray) {
     	var i;
     	var sum = 0;
-    	for (i = 0; i < constants.length; i++) {
+    	for (i = 0; i < variablearray.length; i++) {
     		sum = sum + variablearray[i]*constants[i];
     	}
     	var prediction = Math.exp(sum)/(Math.exp(sum)+1)
