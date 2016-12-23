@@ -258,7 +258,7 @@
     	obj_3.innerHTML="Shooter Velocity: " + roundx(shooter_velocity_ft_sec,1);
 
     	var dist_c_angle = Math.sqrt((shapes[2].x-265)*(shapes[2].x-265) + (shapes[2].y-345)*(shapes[2].y-345))/10.6;
-    	var shooter_velocity_angle_abs = Math.acos((shooter_distance*shooter_distance + shooter_velocity_ft_sec*shooter_velocity_ft_sec - dist_c_angle*dist_c_angle)/2*shooter_distance*shooter_velocity_ft_sec)*180/Math.PI;
+    	var shooter_velocity_angle_abs = Math.acos((shooter_distance*shooter_distance + shooter_velocity_ft_sec*shooter_velocity_ft_sec - dist_c_angle*dist_c_angle)/(2*shooter_distance*shooter_velocity_ft_sec))*180/Math.PI;
     	var obj_4 = document.getElementById("shooter_velocity_angle_abs");
     	obj_4.innerHTML="Shooter Velocity Angle: " + roundx(shooter_velocity_angle_abs,1);
 
