@@ -249,7 +249,7 @@
     	obj_1.innerHTML="Shooter Distance: " + roundx(shooter_distance,1);
 
     	var dist_c = Math.sqrt((shapes[0].x-265)*(shapes[0].x-265) + (shapes[0].y)*(shapes[0].y))/10.6;
-    	var shooter_angle_shifted_abs = Math.acos((shooter_distance*shooter_distance + (345/10.6)*(345/10.6) - dist_c*dist_c)/(2*shooter_distance*(345/10.6)));
+    	var shooter_angle_shifted_abs = Math.acos((shooter_distance*shooter_distance + (345/10.6)*(345/10.6) - dist_c*dist_c)/(2*shooter_distance*(345/10.6)))*180/Math.PI;
     	var obj_2 = document.getElementById("shooter_angle_shifted_abs");
     	obj_2.innerHTML="Shooter Angle: " + roundx(shooter_angle_shifted_abs,1);
 
