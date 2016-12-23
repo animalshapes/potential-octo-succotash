@@ -204,7 +204,7 @@
 		var output = dataCalcs();
 		var prediction = calcPercentage(output);
 		var fgdiv = document.getElementById("fgnum");
-		fgdiv.innerHTML = "" + prediction;
+		fgdiv.innerHTML = "Predicted FG%: " + prediction;
 	}
 
 	function drawScreen() {
@@ -243,15 +243,43 @@
 
     function dataCalcs() {
     	var intercept = 1;
+
     	var shooter_distance = Math.sqrt((shapes[0].x-265)*(shapes[0].x-265) + (shapes[0].y-345)*(shapes[0].y-345))/10.6;
-    	var shooter_angle_shifted_abs = 0;
+    	var obj_1 = document.getElementById("shooter_distance");
+    	obj_1.innerHTML="Shooter Distance: " +shooter_distance;
+
+    	var shooter_angle_shifted_abs = Math.atan2(shapes[0].y, Math.abs((shapes[0].x-265)));
+    	var obj_2 = document.getElementById("shooter_angle_shifted_abs");
+    	obj_2.innerHTML="Shooter Angle: " +shooter_angle_shifted_abs;
+
     	var shooter_velocity_ft_sec = Math.sqrt((shapes[0].x-shapes[2].x)*(shapes[0].x-shapes[2].x) + (shapes[0].y-shapes[2].y)*(shapes[0].y-shapes[2].y))/10.6;
+		var obj_3 = document.getElementById("shooter_velocity_ft_sec");
+    	obj_3.innerHTML="Shooter Velocity: " + shooter_velocity_ft_sec;
+
     	var shooter_velocity_angle_abs = 0;
-    	var dribbles_before = 0;
+    	var obj_4 = document.getElementById("shooter_velocity_angle_abs");
+    	obj_4.innerHTML="Shooter Velocity Angle: " + shooter_velocity_angle_abs;
+
+    	
     	var defender_distance = Math.sqrt((shapes[0].x-shapes[1].x)*(shapes[0].x-shapes[1].x) + (shapes[0].y-shapes[1].y)*(shapes[0].y-shapes[1].y))/10.6;
+		var obj_5 = document.getElementById("defender_distance");
+    	obj_5.innerHTML="Defender Distance: " + defender_distance;
+
     	var defender_angle_abs = 0;
+    	var obj_6 = document.getElementById("defender_angle_abs");
+    	obj_6.innerHTML="Defender Angle: " + defender_angle_abs;
+
     	var defender_velocity_ft_sec = Math.sqrt((shapes[3].x-shapes[1].x)*(shapes[3].x-shapes[1].x) + (shapes[3].y-shapes[1].y)*(shapes[3].y-shapes[1].y))/10.6;
+    	var obj_7 = document.getElementById("defender_velocity_ft_sec");
+    	obj_7.innerHTML="Defender Velocity: " + defender_velocity_ft_sec;
+
     	var defender_velocity_angle_abs = 0;
+    	var obj_8 = document.getElementById("defender_velocity_angle_abs");
+    	obj_8.innerHTML="Defender Velocity Angle: " + defender_velocity_angle_abs;
+
+    	var dribbles_before = 0;
+    	var obj_9 = document.getElementById("dribbles_before");
+    	obj_9.innerHTML="Dribbles Before: " + dribbles_before;
 
     	
     	return [intercept, shooter_distance, shooter_angle_shifted_abs, shooter_velocity_ft_sec, shooter_velocity_angle_abs, dribbles_before, defender_distance, defender_angle_abs, defender_velocity_ft_sec, defender_velocity_angle_abs];
@@ -266,6 +294,11 @@
     	}
     	var prediction = Math.exp(sum)/(Math.exp(sum)+1);
     	var output = Math.round(prediction * 1000) / 1000;
+    	return output;
+    }
+
+    function roundx(input, x) {
+    	var output = Math.round(input * Math.pow(10,x)) / Math.pow(10,x);
     	return output;
     }
 
@@ -290,6 +323,24 @@
 			<div style="display:inline-block;vertical-align: top;">
 				<h5>Player Info</h5>
 				<div id="fgnum">
+				</div>
+				<div id="shooter_distance">
+				</div>
+				<div id="shooter_angle_shifted_abs">
+				</div>
+				<div id="shooter_velocity_ft_sec">
+				</div>
+				<div id="shooter_velocity_angle_abs">
+				</div>
+				<div id="defender_distance">
+				</div>
+				<div id="defender_angle_abs">
+				</div>
+				<div id="defender_velocity_ft_sec">
+				</div>
+				<div id="defender_velocity_angle_abs">
+				</div>
+				<div id="dribbles_before">
 				</div>
 			</div>
 		</div>
