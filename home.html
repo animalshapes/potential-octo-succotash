@@ -202,7 +202,7 @@
 		context.fillStyle="rgb(255,0,0";
 		arrow(context,shapes[1],shapes[3]);
 		var output = dataCalcs();
-		var prediction = calcPercentage();
+		var prediction = calcPercentage(output);
 		var fgdiv = document.getElementById("fgnum");
 		fgdiv.innerHTML = "" + prediction;
 	}
