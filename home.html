@@ -250,7 +250,7 @@
 
     	var shooter_angle_shifted_abs = Math.atan(Math.abs((shapes[0].x-265))/shapes[0].y)*180/Math.PI;
     	if (shooter_angle_shifted_abs < 0) {
-    		shooter_angle_shifted_abs += 180;
+    		shooter_angle_shifted_abs += 360;
     	}
     	var obj_2 = document.getElementById("shooter_angle_shifted_abs");
     	obj_2.innerHTML="Shooter Angle: " + roundx(shooter_angle_shifted_abs,1);
