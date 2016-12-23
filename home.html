@@ -264,7 +264,8 @@
     	for (i = 0; i < 10; i++) {
     		sum = sum + variablearray[i]*constants[i];
     	}
-    	var prediction = Math.exp(sum)/(Math.exp(sum)+1)
+    	var prediction = Math.exp(sum)/(Math.exp(sum)+1);
+    	var output = Math.round(prediction * 1000) / 1000;
     	return prediction;
     }
 
