@@ -248,7 +248,10 @@
     	var obj_1 = document.getElementById("shooter_distance");
     	obj_1.innerHTML="Shooter Distance: " + roundx(shooter_distance,1);
 
-    	var shooter_angle_shifted_abs = Math.atan2(shapes[0].y, Math.abs((shapes[0].x-265)))*180/Math.PI;
+    	var shooter_angle_shifted_abs = Math.atan(Math.abs((shapes[0].x-265))/shapes[0].y)*180/Math.PI;
+    	if (shooter_angle_shifted_abs < 0) {
+    		shooter_angle_shifted_abs += 180;
+    	}
     	var obj_2 = document.getElementById("shooter_angle_shifted_abs");
     	obj_2.innerHTML="Shooter Angle: " + roundx(shooter_angle_shifted_abs,1);
 
