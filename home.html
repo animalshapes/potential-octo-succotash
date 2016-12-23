@@ -293,7 +293,7 @@
     		sum = sum + variablearray[i]*constants[i];
     	}
     	var prediction = Math.exp(sum)/(Math.exp(sum)+1);
-    	var output = Math.round(prediction * 1000) / 1000;
+    	var output = roundx(prediction,3);
     	return output;
     }
 
